@@ -1,0 +1,346 @@
+/* UI ONLY CHANGE */
+/* ===== CONTACT PAGE STYLES ===== */
+
+.contact-page {
+  width: 100%;
+  padding-left: 60px; /* Space for notebook tabs on desktop */
+}
+
+/* Page Header */
+.contact-header {
+  background: var(--primary-light);
+  padding: var(--spacing-3xl) 0;
+  text-align: center;
+  border-bottom: 1px dashed var(--pencil-line);
+}
+
+.contact-header h1 {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-lg);
+}
+
+.contact-header p {
+  color: var(--secondary);
+  font-size: 1.5rem;
+}
+
+/* Main Contact Section */
+.contact-main {
+  background-color: var(--primary);
+  border-bottom: 1px dashed var(--pencil-line);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-3xl);
+  align-items: start;
+}
+
+/* Contact Form Wrapper - Ruled notebook page style */
+.contact-form-wrapper {
+  background-color: var(--primary);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-notebook);
+  padding: var(--spacing-2xl);
+  box-shadow: var(--paper-shadow);
+  
+  /* Left margin line */
+  border-left: 2px solid rgba(192, 57, 43, 0.3);
+  
+  /* Ruled lines */
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 39px,
+    var(--pencil-line) 39px,
+    var(--pencil-line) 40px
+  );
+  background-position: 0 40px;
+  background-attachment: local; /* Scrolls with content */
+}
+
+.contact-form-wrapper h3 {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xl);
+  font-size: 2.2rem;
+  padding-left: var(--spacing-md);
+  margin-top: -10px; /* Align with ruled lines */
+}
+
+/* Success Message */
+.success-message {
+  background-color: var(--tab-about); /* sage green */
+  border: 1px dashed var(--accent);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  animation: slideInUp 0.5s ease-out;
+  transform: rotate(-0.5deg);
+}
+
+.success-message p {
+  color: #3d5c3d;
+  margin: 0;
+  font-weight: 500;
+  font-family: 'Caveat', cursive;
+  font-size: 1.2rem;
+}
+
+/* Error Message */
+.error-message {
+  background-color: #f5d6d6; /* soft warm red bg */
+  border: 1px dashed #c0392b;
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  animation: slideInUp 0.5s ease-out;
+  transform: rotate(0.5deg);
+}
+
+.error-message p {
+  color: #c0392b;
+  margin: 0;
+  font-weight: 500;
+  font-family: 'Caveat', cursive;
+  font-size: 1.2rem;
+}
+
+/* Form Styles */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl); /* Increased gap to align with lines better */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  padding-left: var(--spacing-md);
+}
+
+.form-group label {
+  color: var(--secondary-dark);
+  font-family: 'Caveat', cursive;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+/* The pencil-line style is already in components.css, adding specific overrides here if needed */
+.form-group input,
+.form-group textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 2px dashed var(--secondary);
+  padding: var(--spacing-sm) 0;
+  border-radius: 0;
+  line-height: 40px; /* matches repeating-linear-gradient spacing */
+}
+
+.form-group textarea {
+  line-height: 40px;
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 39px,
+    var(--pencil-line) 39px,
+    var(--pencil-line) 40px
+  );
+  border: 1px dashed var(--pencil-line);
+  padding: var(--spacing-sm) var(--spacing-md);
+  margin-top: 10px;
+}
+
+.submit-btn {
+  align-self: flex-start;
+  margin-top: var(--spacing-xl);
+  margin-left: var(--spacing-md);
+  background-color: var(--tab-home);
+  color: var(--text-primary);
+  border: 2px dashed var(--secondary);
+  transform: rotate(-1.5deg);
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px) rotate(0deg);
+  background-color: #dfc8a8;
+}
+
+/* Contact Info Wrapper */
+.contact-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.contact-info-wrapper h3 {
+  color: var(--text-primary);
+  font-size: 1.8rem;
+  margin-bottom: var(--spacing-sm);
+  font-family: 'Caveat', cursive;
+}
+
+.info-card {
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-notebook);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  transition: all var(--transition-base);
+  box-shadow: var(--paper-shadow);
+}
+
+/* Sticky note alternating colors */
+.info-card:nth-child(2) {
+  background-color: var(--tab-home); /* cream */
+  transform: rotate(1deg);
+}
+.info-card:nth-child(3) {
+  background-color: var(--tab-about); /* sage */
+  transform: rotate(-1.5deg);
+}
+.info-card:nth-child(4) {
+  background-color: var(--tab-projects); /* blue-tint */
+  transform: rotate(0.5deg);
+}
+.info-card:nth-child(5) {
+  background-color: var(--tab-contact); /* pink/warm-tint */
+  transform: rotate(-0.5deg);
+}
+
+.info-card:hover {
+  border-color: var(--secondary);
+  transform: translateY(-3px) rotate(0);
+  box-shadow: var(--paper-shadow-hover);
+}
+
+.info-card h4 {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.info-card p {
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.contact-details {
+  background-color: transparent;
+  border-left: 2px dashed var(--secondary);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  margin-top: var(--spacing-md);
+}
+
+.contact-details h4 {
+  color: var(--secondary);
+  font-family: 'Caveat', cursive;
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.contact-details p {
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* FAQ Section */
+.faq-section {
+  background-color: var(--primary-light);
+  border-bottom: 1px dashed var(--pencil-line);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-2xl);
+  margin-top: var(--spacing-2xl);
+}
+
+.faq-item {
+  background: transparent;
+  border-left: 2px dashed var(--border-strong);
+  padding-left: var(--spacing-xl);
+  position: relative;
+  transition: all var(--transition-base);
+}
+
+.faq-item:hover {
+  border-left-color: var(--secondary);
+  transform: translateX(4px);
+}
+
+/* Bullet point */
+.faq-item::before {
+  content: 'Q:';
+  position: absolute;
+  left: -2px; /* cover the border */
+  top: 0;
+  background-color: var(--primary-light);
+  padding: 4px 0;
+  color: var(--secondary);
+  font-family: 'Caveat', cursive;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transform: translateX(-50%);
+}
+
+.faq-item h4 {
+  color: var(--secondary-dark);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.4rem;
+  font-family: 'Caveat', cursive;
+}
+
+.faq-item p {
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Final CTA */
+.final-cta {
+  background-color: var(--primary);
+  border-top: 2px dashed var(--border-strong);
+}
+
+.final-cta .cta-content {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.final-cta h2 {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.final-cta p {
+  color: var(--secondary);
+  margin-bottom: var(--spacing-2xl);
+  font-size: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-page {
+    padding-left: 0;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-3xl);
+  }
+
+  .contact-form-wrapper {
+    padding: var(--spacing-lg);
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .submit-btn {
+    width: 100%;
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,255 @@
+/* UI ONLY CHANGE */
+/* ===== ABOUT PAGE STYLES ===== */
+
+.about-page {
+  width: 100%;
+  padding-left: 60px; /* Space for notebook tabs on desktop */
+}
+
+/* Page Header */
+.about-header {
+  background-color: #f0e6d3; /* warm cream bg with aged paper tone */
+  padding: var(--spacing-3xl) 0;
+  text-align: center;
+  border-bottom: 1px dashed var(--pencil-line);
+}
+
+.about-header h1 {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-lg);
+}
+
+.about-header p {
+  color: var(--secondary);
+  font-size: 1.5rem;
+}
+
+/* Mission & Vision Section */
+.mission-section {
+  background-color: var(--primary);
+  border-bottom: 1px dashed var(--pencil-line);
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-2xl);
+}
+
+.mission-card {
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-notebook);
+  padding: var(--spacing-2xl);
+  text-align: left;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--paper-shadow);
+  transform: rotate(-0.5deg);
+}
+
+.mission-card:nth-child(even) {
+  transform: rotate(0.5deg);
+}
+
+.mission-card.note-cream { background-color: var(--tab-home); }
+.mission-card.note-sage { background-color: var(--tab-about); }
+.mission-card.note-blue { background-color: var(--tab-projects); }
+
+/* Remove sweep animation */
+.mission-card::before {
+  display: none;
+}
+
+.mission-card:hover {
+  transform: translateY(-4px) rotate(0);
+  border-color: var(--secondary);
+  box-shadow: var(--paper-shadow-hover);
+}
+
+.mission-card h3 {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.mission-card p {
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Team Section -> Journey Section */
+.team-section {
+  background-color: var(--primary-light);
+  border-bottom: 1px dashed var(--pencil-line);
+}
+
+.team-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-2xl);
+  margin-top: var(--spacing-2xl);
+  position: relative;
+}
+
+/* Timeline connector */
+@media (min-width: 992px) {
+  .team-details-grid::before {
+    content: '';
+    position: absolute;
+    top: 50px; /* aligns with header */
+    left: 0;
+    right: 0;
+    height: 2px;
+    border-top: 2px dashed var(--pencil-line);
+    z-index: 0;
+  }
+}
+
+.team-card {
+  background: var(--primary);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-notebook);
+  padding: var(--spacing-2xl);
+  transition: all var(--transition-base);
+  position: relative;
+  box-shadow: var(--paper-shadow);
+  z-index: 1; /* above timeline */
+}
+
+/* Date label decoration instead of sweep */
+.team-card::before {
+  content: '🗓';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  opacity: 0.5;
+}
+
+.team-card:hover {
+  border-color: var(--secondary);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+}
+
+.team-card-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  position: relative;
+  z-index: 1;
+}
+
+.team-card h3 {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+  background: var(--primary);
+  display: inline-block;
+  padding: 0 var(--spacing-md);
+}
+
+.team-card .specialty {
+  color: var(--secondary);
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.expertise-list {
+  list-style: none;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.expertise-list li {
+  color: var(--text-secondary);
+  padding: var(--spacing-sm) 0;
+  padding-left: var(--spacing-xl);
+  position: relative;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.expertise-list li::before {
+  content: '✎';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* Why Choose Us Section -> Things I Care About */
+.why-section {
+  background-color: var(--primary);
+  border-bottom: 1px dashed var(--pencil-line);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-2xl);
+}
+
+.benefit-item {
+  background: var(--primary-light);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-notebook);
+  padding: var(--spacing-xl);
+  text-align: center;
+  transition: all var(--transition-base);
+  position: relative;
+  box-shadow: var(--paper-shadow);
+  transform: rotate(-0.2deg);
+}
+
+.benefit-item:hover {
+  transform: translateY(-4px) rotate(0);
+  border-color: var(--secondary);
+  box-shadow: var(--paper-shadow-hover);
+}
+
+.benefit-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: var(--primary);
+  border: 2px solid var(--secondary);
+  border-radius: 50%;
+  color: var(--secondary);
+  font-size: 1.8rem;
+  margin: 0 auto var(--spacing-lg);
+  box-shadow: 2px 2px 0 rgba(139, 69, 19, 0.1);
+}
+
+.benefit-item h4 {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.benefit-item p {
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-page {
+    padding-left: 0;
+  }
+
+  .mission-grid,
+  .team-details-grid,
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-card,
+  .mission-card {
+    padding: var(--spacing-lg);
+  }
+}

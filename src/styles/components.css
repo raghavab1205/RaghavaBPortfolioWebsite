@@ -1,0 +1,311 @@
+/* UI ONLY CHANGE */
+/* ===== REUSABLE COMPONENT STYLES — Notebook Theme ===== */
+
+/* Button Styles — Sticky Note / Stamp Look */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md) var(--spacing-xl);
+  border: 2px dashed var(--border-strong);
+  border-radius: var(--radius-notebook);
+  font-size: 1rem;
+  font-family: 'Caveat', cursive;
+  font-weight: 600;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  white-space: nowrap;
+  gap: var(--spacing-sm);
+  position: relative;
+  transform: rotate(-0.5deg);
+}
+
+.btn-primary {
+  background: var(--tab-home);
+  color: var(--text-primary);
+  border-color: var(--secondary);
+  box-shadow: var(--paper-shadow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) rotate(0.3deg);
+  box-shadow: var(--paper-shadow-hover);
+  background: #dfc8a8;
+  border-bottom: 2px dashed var(--secondary);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px dashed var(--secondary);
+  color: var(--secondary);
+}
+
+.btn-secondary:hover {
+  background: rgba(139, 69, 19, 0.06);
+  transform: translateY(-2px) rotate(0.3deg);
+}
+
+.btn-accent {
+  background: var(--tab-about);
+  color: var(--text-primary);
+  border-color: var(--accent);
+}
+
+.btn-accent:hover {
+  transform: translateY(-3px) rotate(0.3deg);
+  box-shadow: var(--paper-shadow-hover);
+}
+
+.btn-small {
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 1rem;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Card Styles — Notebook Paper Look */
+.card {
+  background: var(--primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-notebook);
+  padding: var(--spacing-xl);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--paper-shadow);
+  /* Slight tilt for hand-placed feel */
+  transform: rotate(-0.3deg);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--pencil-line);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.card:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--paper-shadow-hover);
+  transform: translateY(-4px) rotate(0.2deg);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  background: var(--primary-light);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-lg);
+  font-size: 3rem;
+}
+
+.card h3 {
+  margin-bottom: var(--spacing-md);
+}
+
+.card p {
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-secondary);
+}
+
+/* Input Styles — Pencil-line / Notebook */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+  width: 100%;
+  padding: var(--spacing-md);
+  border: none;
+  border-bottom: 2px solid var(--pencil-line);
+  border-radius: 0;
+  background: transparent;
+  color: var(--text-primary);
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  transition: border-color var(--transition-base);
+  margin-bottom: var(--spacing-lg);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-bottom-color: var(--secondary);
+  background: rgba(139, 69, 19, 0.02);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+  border: 1px dashed var(--pencil-line);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-md);
+}
+
+textarea:focus {
+  border-color: var(--secondary);
+  border-style: solid;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+  font-style: italic;
+  font-family: 'Caveat', cursive;
+  font-size: 1.05rem;
+}
+
+/* Badge Styles — Small Sticky Notes */
+.badge {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 500;
+  font-family: 'Caveat', cursive;
+  transform: rotate(-1deg);
+}
+
+.badge-primary {
+  background: var(--tab-home);
+  color: var(--secondary);
+  border: 1px dashed var(--secondary);
+}
+
+.badge-success {
+  background: var(--tab-about);
+  color: #3d5c3d;
+  border: 1px dashed var(--accent);
+}
+
+.badge-accent {
+  background: var(--tab-projects);
+  color: #3d5c6b;
+  border: 1px dashed var(--dusty-blue);
+}
+
+/* List Styles — Pencil Bullet */
+.list-styled {
+  list-style: none;
+}
+
+.list-styled li {
+  padding: var(--spacing-md) 0;
+  padding-left: var(--spacing-xl);
+  position: relative;
+  color: var(--text-secondary);
+}
+
+.list-styled li::before {
+  content: '✎';
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+  font-weight: bold;
+}
+
+/* Divider — Pencil Stroke */
+.divider {
+  height: 0;
+  border: none;
+  border-top: 2px dashed var(--pencil-line);
+  margin: var(--spacing-2xl) 0;
+  transform: rotate(-0.3deg);
+}
+
+/* Text Utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+/* Handwriting class for when you want Caveat on non-heading elements */
+.handwritten {
+  font-family: 'Caveat', cursive;
+}
+
+/* Section Padding */
+.py-sm {
+  padding-top: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+}
+
+.py-md {
+  padding-top: var(--spacing-2xl);
+  padding-bottom: var(--spacing-2xl);
+}
+
+.py-lg {
+  padding-top: var(--spacing-3xl);
+  padding-bottom: var(--spacing-3xl);
+}
+
+.mt-sm {
+  margin-top: var(--spacing-lg);
+}
+
+.mt-md {
+  margin-top: var(--spacing-2xl);
+}
+
+.mt-lg {
+  margin-top: var(--spacing-3xl);
+}
+
+/* Responsive Visibility */
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .show-mobile {
+    display: none !important;
+  }
+}

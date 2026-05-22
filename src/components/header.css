@@ -1,0 +1,263 @@
+/* UI ONLY CHANGE */
+/* ===== NOTEBOOK TAB NAVIGATION ===== */
+
+/* Desktop — Vertical tabs on the left edge */
+.notebook-tabs {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.notebook-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 110px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  text-decoration: none;
+  font-family: 'Caveat', cursive;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-left: none;
+  border-radius: 0 10px 10px 0;
+  transition: all var(--transition-base);
+  position: relative;
+  cursor: pointer;
+  box-shadow: 2px 2px 6px rgba(139, 69, 19, 0.06);
+  letter-spacing: 0.5px;
+}
+
+/* Tab color variants */
+.notebook-tab.tab-home {
+  background: var(--tab-home);
+}
+.notebook-tab.tab-about {
+  background: var(--tab-about);
+}
+.notebook-tab.tab-projects {
+  background: var(--tab-projects);
+}
+.notebook-tab.tab-contact {
+  background: var(--tab-contact);
+}
+
+/* Active tab — wider, more prominent */
+.notebook-tab.active {
+  width: 56px;
+  font-weight: 700;
+  border-color: var(--border-strong);
+  box-shadow: 3px 3px 12px rgba(139, 69, 19, 0.12);
+  z-index: 2;
+}
+
+/* Paper fold effect on active tab */
+.notebook-tab.active::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(
+    135deg,
+    transparent 50%,
+    rgba(139, 69, 19, 0.08) 50%
+  );
+}
+
+/* Hover — slight lift */
+.notebook-tab:hover {
+  width: 52px;
+  box-shadow: 3px 3px 10px rgba(139, 69, 19, 0.1);
+  border-bottom: 1px solid var(--border);
+}
+
+.tab-label {
+  transform: rotate(180deg);
+  pointer-events: none;
+}
+
+/* ===== MOBILE — Paper Clip Toggle ===== */
+.mobile-clip-btn {
+  display: none;
+  position: fixed;
+  top: var(--spacing-lg);
+  right: var(--spacing-lg);
+  z-index: 1100;
+  width: 48px;
+  height: 48px;
+  background: var(--primary);
+  border: 2px dashed var(--border-strong);
+  border-radius: 50%;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: var(--paper-shadow);
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-clip-btn:hover {
+  transform: rotate(8deg);
+  box-shadow: var(--paper-shadow-hover);
+}
+
+.clip-icon {
+  line-height: 1;
+}
+
+/* ===== MOBILE OVERLAY ===== */
+.mobile-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 26, 46, 0.3);
+  z-index: 1050;
+  animation: fadeIn 0.3s ease;
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100vh;
+  background: var(--primary);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  border-left: 3px solid var(--border-strong);
+  padding: var(--spacing-2xl) var(--spacing-xl);
+  box-shadow: -5px 0 20px rgba(139, 69, 19, 0.1);
+  animation: slideInFromRight 0.4s ease;
+  overflow-y: auto;
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-2xl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 2px dashed var(--pencil-line);
+}
+
+.mobile-title {
+  font-family: 'Caveat', cursive;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.mobile-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  transition: color var(--transition-fast);
+}
+
+.mobile-close:hover {
+  color: var(--secondary);
+}
+
+/* Mobile nav links */
+.mobile-menu nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mobile-menu nav ul li {
+  margin-bottom: var(--spacing-sm);
+}
+
+.mobile-link {
+  display: block;
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-family: 'Caveat', cursive;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+  border: 1px dashed transparent;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-base);
+  transform: rotate(-0.5deg);
+  border-bottom: none;
+}
+
+.mobile-link:hover {
+  border-color: var(--border);
+  border-bottom: 1px dashed var(--border);
+  transform: rotate(0deg) translateX(4px);
+}
+
+/* Active mobile link — sticky note highlight */
+.mobile-link.active {
+  border-color: var(--border-strong);
+  font-weight: 700;
+}
+
+/* Color backgrounds for mobile links */
+.mobile-link.tab-home { background: var(--tab-home); }
+.mobile-link.tab-about { background: var(--tab-about); }
+.mobile-link.tab-projects { background: var(--tab-projects); }
+.mobile-link.tab-contact { background: var(--tab-contact); }
+
+.mobile-menu-footer {
+  margin-top: var(--spacing-2xl);
+  padding-top: var(--spacing-lg);
+  border-top: 2px dashed var(--pencil-line);
+  text-align: center;
+}
+
+.mobile-menu-footer p {
+  font-family: 'Caveat', cursive;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .notebook-tabs {
+    display: none;
+  }
+
+  .mobile-clip-btn {
+    display: flex;
+  }
+
+  .mobile-overlay {
+    display: flex;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-clip-btn {
+    display: none !important;
+  }
+
+  .mobile-overlay {
+    display: none !important;
+  }
+}
