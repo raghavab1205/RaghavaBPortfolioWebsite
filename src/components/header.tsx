@@ -1,6 +1,7 @@
 // UI ONLY CHANGE
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 import './header.css';
 
 const Header: React.FC = () => {
@@ -20,6 +21,8 @@ const Header: React.FC = () => {
 
   return (
     <>
+      <ThemeToggle />
+      
       {/* Desktop — Notebook Tab Navigation (left side) */}
       <nav className="notebook-tabs" aria-label="Main navigation">
         {navLinks.map((link) => (

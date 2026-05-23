@@ -46,7 +46,7 @@
   box-shadow: var(--paper-shadow);
   
   /* Left margin line */
-  border-left: 2px solid rgba(192, 57, 43, 0.3);
+  border-left: 2px solid var(--danger);
   
   /* Ruled lines */
   background-image: repeating-linear-gradient(
@@ -79,7 +79,7 @@
 }
 
 .success-message p {
-  color: #3d5c3d;
+  color: var(--text-primary);
   margin: 0;
   font-weight: 500;
   font-family: 'Caveat', cursive;
@@ -88,8 +88,8 @@
 
 /* Error Message */
 .error-message {
-  background-color: #f5d6d6; /* soft warm red bg */
-  border: 1px dashed #c0392b;
+  background-color: var(--primary-light);
+  border: 1px dashed var(--danger);
   border-radius: var(--radius-sm);
   padding: var(--spacing-lg);
   margin-bottom: var(--spacing-xl);
@@ -98,7 +98,7 @@
 }
 
 .error-message p {
-  color: #c0392b;
+  color: var(--danger);
   margin: 0;
   font-weight: 500;
   font-family: 'Caveat', cursive;

@@ -1,77 +1,59 @@
 // UI ONLY CHANGE
+// CONTENT FILL
 import React from 'react';
 import './services.css';
 
 const Services: React.FC = () => {
-  const services = [
-    {
-      id: 1,
-      title: 'Smart Study Planner',
-      icon: '📚',
-      description: 'An AI-powered study schedule generator that adapts to your learning pace',
-      features: [
-        'Personalized study plans',
-        'Adaptive difficulty scaling',
-        'Progress tracking dashboard',
-        'Spaced repetition system',
-        'Calendar integration',
-        'Study streak analytics',
-      ],
-      details:
-        'Built with Python and React, this tool analyzes your learning patterns and creates optimized study schedules. It uses spaced repetition algorithms to help you retain more while studying less.',
-    },
-    {
-      id: 2,
-      title: 'Code Sketch Pad',
-      icon: '🎨',
-      description: 'A browser-based code playground with real-time preview',
-      features: [
-        'Live HTML/CSS/JS preview',
-        'Syntax highlighting',
-        'Shareable code snippets',
-        'Template gallery',
-        'Dark/light themes',
-        'Export to CodePen',
-      ],
-      details:
-        'A lightweight, zero-dependency code playground I built from scratch. Write HTML, CSS, and JavaScript in split panes and see your creation come to life instantly. Perfect for quick experiments and sharing ideas.',
-    },
-    {
-      id: 3,
-      title: 'Data Story Teller',
-      icon: '📈',
-      description: 'Interactive data visualization that turns CSV files into stories',
-      features: [
-        'Drag-and-drop CSV import',
-        'Auto chart type detection',
-        'Interactive filtering',
-        'Export as PNG/SVG',
-        'Responsive layouts',
-        'Custom color palettes',
-      ],
-      details:
-        'Upload any CSV file and watch it transform into beautiful, interactive visualizations. The app automatically detects data types and suggests the best chart formats. Built with D3.js and vanilla JavaScript.',
-    },
-  ];
-
   const projects = [
     {
       id: 1,
-      title: 'Markdown Journal',
-      description: 'A minimalist daily journaling app with markdown support and local storage',
-      tech: ['React', 'LocalStorage', 'Markdown'],
+      title: 'Supply Chain Demand Forecasting',
+      icon: '📈',
+      description: 'A live project analyzing real-world sales data to predict product demand',
+      details:
+        'I worked on a real-world supply chain project where I collected and analyzed historical sales data, trained multiple forecasting models, and compared their performance. The goal was to help the company predict product demand accurately to optimize inventory management.',
+      github: 'https://github.com/raghavab1205/Demand_Forecasting-For_SCM',
     },
     {
       id: 2,
-      title: 'CLI Task Manager',
-      description: 'A command-line to-do app with priorities, tags, and natural language date parsing',
-      tech: ['Python', 'Click', 'SQLite'],
+      title: 'Smart SAT',
+      icon: '🛰️',
+      description: 'A chatbot that makes complex satellite data accessible through natural language',
+      details:
+        'Built a chatbot interface that helps students and researchers understand unformatted satellite data directly through conversation. You can ask questions in plain English and get insights from complex datasets, making data exploration intuitive and accessible.',
+      github: 'https://github.com/raghavab1205/Smart-SAT/tree/master',
     },
     {
       id: 3,
-      title: 'Weather Mood Board',
-      description: 'A creative weather app that generates color palettes and artwork based on current conditions',
-      tech: ['JavaScript', 'Canvas API', 'OpenWeather'],
+      title: 'Chess AI Website',
+      icon: '♟️',
+      description: 'A chess platform with AI opponent and an interactive teaching system',
+      details:
+        'Created a website where you can play chess against a home-built AI trained in Magnus Carlsen style. The platform includes a teaching AI that suggests the top 3-5 moves with visual explanations, helping you understand the game strategy as you play.',
+      github: 'https://github.com/raghavab1205/ChessAIWebsite',
+    },
+  ];
+
+  const skills = [
+    {
+      category: 'Machine Learning & Data Science',
+      items: ['Model Training', 'Data Analysis', 'Feature Engineering', 'Model Evaluation'],
+    },
+    {
+      category: 'Programming Languages',
+      items: ['Python', 'JavaScript', 'TypeScript', 'SQL'],
+    },
+    {
+      category: 'Web Development',
+      items: ['React', 'Node.js', 'Frontend Design', 'Full-Stack Development'],
+    },
+    {
+      category: 'Tools & Platforms',
+      items: ['Git & GitHub', 'Jupyter Notebooks', 'Google Colab', 'VS Code'],
+    },
+    {
+      category: 'Soft Skills',
+      items: ['Problem Solving', 'Analytical Thinking', 'Technical Documentation', 'Team Collaboration'],
     },
   ];
 
@@ -87,49 +69,27 @@ const Services: React.FC = () => {
         </div>
       </section>
 
-      {/* Main Services */}
+      {/* Main Projects */}
       <section className="section services-main">
         <div className="container">
           <div className="services-list">
-            {services.map((service) => (
-              <div key={service.id} className="service-detailed">
-                <div className="service-icon-large">{service.icon}</div>
-                <div className="service-content">
-                  <h3>{service.title}</h3>
-                  <p className="service-description handwritten">{service.description}</p>
-                  <p className="service-details">{service.details}</p>
-                  <h5>What's Included:</h5>
-                  <ul className="features-list">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx}>{feature}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Project Portfolio */}
-      <section className="section portfolio-section">
-        <div className="container">
-          <div className="section-title">
-            <h2>Experiments & Side Quests</h2>
-            <p>Small things I made for fun</p>
-          </div>
-
-          <div className="projects-grid">
             {projects.map((project) => (
-              <div key={project.id} className="project-card">
-                <h4>{project.title}</h4>
-                <p>{project.description}</p>
-                <div className="tech-stack">
-                  {project.tech.map((tech, idx) => (
-                    <span key={idx} className="tech-badge">
-                      {tech}
-                    </span>
-                  ))}
+              <div key={project.id} className="service-detailed">
+                <div className="service-icon-large">{project.icon}</div>
+                <div className="service-content">
+                  <h3>{project.title}</h3>
+                  <p className="service-description handwritten">{project.description}</p>
+                  <p className="service-details">{project.details}</p>
+                  <div className="project-links">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="github-link"
+                    >
+                      View on GitHub →
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}
@@ -137,40 +97,25 @@ const Services: React.FC = () => {
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="section process-section">
+      {/* Skills Section */}
+      <section className="section skills-section">
         <div className="container">
           <div className="section-title">
-            <h2>How I Work</h2>
-            <p>My creative process, roughly</p>
+            <h2>Skills & Expertise</h2>
+            <p className="handwritten">What I work with</p>
           </div>
 
-          <div className="process-steps">
-            <div className="step">
-              <div className="step-number handwritten">1</div>
-              <h4>Curiosity</h4>
-              <p>Start with a question or an itch to build something</p>
-            </div>
-            <div className="step">
-              <div className="step-number handwritten">2</div>
-              <h4>Sketch</h4>
-              <p>Scribble ideas on paper, no screens yet</p>
-            </div>
-            <div className="step">
-              <div className="step-number handwritten">3</div>
-              <h4>Build</h4>
-              <p>Code it up, break it, fix it, repeat</p>
-            </div>
-            <div className="step">
-              <div className="step-number handwritten">4</div>
-              <h4>Ship</h4>
-              <p>Put it out there and see what happens</p>
-            </div>
-            <div className="step">
-              <div className="step-number handwritten">5</div>
-              <h4>Learn</h4>
-              <p>Gather feedback and make it better</p>
-            </div>
+          <div className="skills-grid">
+            {skills.map((skillGroup, idx) => (
+              <div key={idx} className="skill-card">
+                <h4>{skillGroup.category}</h4>
+                <ul className="skill-list">
+                  {skillGroup.items.map((skill, sidx) => (
+                    <li key={sidx}>{skill}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -179,10 +124,10 @@ const Services: React.FC = () => {
       <section className="section cta-section">
         <div className="container">
           <div className="cta-content">
-            <h2>Got an idea?</h2>
+            <h2>Want to talk about a project or collab?</h2>
             <p className="handwritten">I love hearing about interesting problems to solve</p>
             <a href="/contact" className="cta-btn">
-              Let's talk about it
+              Go to Contact
             </a>
           </div>
         </div>

@@ -138,12 +138,12 @@ export async function sendContactConfirmationEmail(data: ContactEmailData) {
 
   const htmlContent = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-      <h2 style="color: #ff8c00; text-align: center;">freeUPlance</h2>
+      <h2 style="color: #ff8c00; text-align: center;">Raghava B</h2>
       
       <h3 style="color: #0a0a0a;">Hi ${escapeHtmlNode(data.name.split(' ')[0])},</h3>
       
       <p style="line-height: 1.6; color: #333;">
-        Thank you for reaching out to freeUPlance! We've received your message and appreciate your interest in our AI/ML services.
+        Thank you for reaching out to ME! I've received your message and appreciate your interest in my AI/ML services.
       </p>
 
       <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin: 20px 0;">
@@ -152,12 +152,12 @@ export async function sendContactConfirmationEmail(data: ContactEmailData) {
       </div>
 
       <p style="line-height: 1.6; color: #333;">
-        Our team will review your message and get back to you within 24 hours. In the meantime, feel free to explore our services at <a href="https://freeuplance.com" style="color: #ff8c00; text-decoration: none;">freeuplance.com</a>.
+        I will review your message and get back to you within 24 hours. In the meantime, feel free to explore my services at <a href="https://raghava-b-portfolio-website.vercel.app" style="color: #ff8c00; text-decoration: none;">MY OWN WEBSITE</a>.
       </p>
 
       <p style="line-height: 1.6; color: #333;">
         Best regards,<br/>
-        The freeUPlance Team
+        Raghava B
       </p>
 
       <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 20px 0;" />
@@ -173,7 +173,7 @@ export async function sendContactConfirmationEmail(data: ContactEmailData) {
     const result = await transporter.sendMail({
       from: emailFrom,
       to: data.email,
-      subject: 'We received your message - freeUPlance',
+      subject: 'I received your message - Raghava B',
       html: htmlContent,
     });
 

@@ -8,7 +8,7 @@
 
 /* Page Header */
 .about-header {
-  background-color: #f0e6d3; /* warm cream bg with aged paper tone */
+  background-color: var(--primary-light);
   padding: var(--spacing-3xl) 0;
   text-align: center;
   border-bottom: 1px dashed var(--pencil-line);

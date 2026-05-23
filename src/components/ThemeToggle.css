@@ -1,0 +1,64 @@
+/* ===== THEME TOGGLE COMPONENT ===== */
+/* Doodle-style notebook toggle switch */
+
+.theme-toggle {
+  position: fixed;
+  top: var(--spacing-lg);
+  right: var(--spacing-lg);
+  z-index: 950;
+  width: 48px;
+  height: 48px;
+  border: 2px dashed var(--border-strong);
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--paper-shadow);
+  transform: rotate(-2deg);
+}
+
+.theme-toggle:hover {
+  transform: translateY(-3px) rotate(2deg);
+  box-shadow: var(--paper-shadow-hover);
+  border-color: var(--secondary);
+}
+
+.theme-toggle:active {
+  transform: translateY(-1px) rotate(2deg);
+}
+
+.theme-icon {
+  display: inline-block;
+  transition: transform var(--transition-base);
+}
+
+.theme-toggle:hover .theme-icon {
+  transform: scale(1.2) rotate(15deg);
+}
+
+/* Dark mode styles for toggle */
+[data-theme="dark"] .theme-toggle {
+  background: var(--dark-primary);
+  color: var(--dark-text-primary);
+  border-color: var(--dark-border-strong);
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+  box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .theme-toggle {
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
+    top: calc(var(--spacing-lg) + 48px + var(--spacing-md));
+  }
+}

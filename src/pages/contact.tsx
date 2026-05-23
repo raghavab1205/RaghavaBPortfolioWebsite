@@ -206,8 +206,8 @@ const Contact: React.FC = () => {
       <section className="section faq-section">
         <div className="container">
           <div className="section-title">
-            <h2>Common Questions</h2>
-            <p>Things people usually ask</p>
+            <h2>Questions/Doubts</h2>
+            <p>Things you might want to ask</p>
           </div>
 
           <div className="faq-grid">

@@ -62,6 +62,46 @@
   --transition-slow: 600ms ease-in-out;
 }
 
+/* ===== DARK MODE THEME ===== */
+[data-theme="dark"] {
+  /* Colors — Dark Warm Palette (journal at night by lamplight) */
+  --primary: #1a1814;            /* Dark warm ink */
+  --primary-light: #242019;      /* Dark aged paper */
+  --primary-dark: #2d2820;       /* Darker card surface */
+  --secondary: #d4a574;          /* Light warm amber */
+  --secondary-dark: #e8c4a0;     /* Lighter warm amber */
+  --accent: #7a9d7a;             /* Slightly desaturated sage */
+  --accent-light: #9bb69b;       /* Light desaturated sage */
+  --dusty-blue: #7a9bb8;         /* Slightly desaturated dusty blue */
+  --dusty-blue-light: #9ab8d4;   /* Light desaturated dusty blue */
+  --success: #7a9d7a;            /* Desaturated sage green */
+  --danger: #d9534f;             /* Muted red for dark */
+  --warning: #e8c4a0;            /* Warm amber for dark */
+  --neutral: #a89984;            /* Warm gray for dark */
+  --neutral-light: #6b6359;      /* Light warm gray for dark */
+  --text-primary: #f0e6d3;       /* Warm cream text */
+  --text-secondary: #c4b49a;     /* Muted warm tan */
+  --text-muted: #8b7f73;         /* Muted text for dark */
+  --border: rgba(212, 165, 116, 0.1);   /* Subtle warm border for dark */
+  --border-strong: rgba(212, 165, 116, 0.25);
+  --paper-shadow: 2px 3px 8px rgba(0, 0, 0, 0.3);
+  --paper-shadow-hover: 3px 5px 15px rgba(0, 0, 0, 0.4);
+  --pencil-line: rgba(212, 165, 116, 0.12);
+
+  /* Tab colors for dark mode */
+  --tab-home: #3d3428;
+  --tab-about: #2d3d2d;
+  --tab-projects: #2d3a48;
+  --tab-contact: #3d2d2d;
+
+  /* Shadows — darker */
+  --shadow-sm: 1px 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-md: 2px 3px 8px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 3px 5px 15px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 5px 8px 25px rgba(0, 0, 0, 0.35);
+  --shadow-2xl: 8px 12px 35px rgba(0, 0, 0, 0.4);
+}
+
 /* ===== RESET & BASE STYLES ===== */
 * {
   margin: 0;

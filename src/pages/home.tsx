@@ -1,4 +1,5 @@
 // UI ONLY CHANGE
+// CONTENT FILL
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './home.css';
@@ -11,24 +12,24 @@ const Home: React.FC = () => {
         <div className="container hero-content">
           <div className="hero-text">
             <h1 className="hero-title">
-              Hey, I'm Raghava — I build things with code & curiosity
+              Hey, I'm Raghava — I train models, break things, and occasionally ship them.
             </h1>
             <p className="hero-subtitle handwritten">
-              Developer, tinkerer, and lifelong learner. Welcome to my notebook — a collection of projects, experiments, and things I care about.
+              Final-year AI/ML student building end-to-end ML pipelines and full-stack web apps. From OCR models to MERN stacks, welcome to my notebook.
             </p>
             <div className="hero-cta">
               <Link to="/services" className="btn btn-primary">
                 See My Projects
               </Link>
               <Link to="/about" className="btn btn-secondary">
-                Read My Story
+                About Me
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Quick Services Overview */}
+      {/* Quick Services Overview -> Featured Projects */}
       <section className="section services-overview">
         <div className="container">
           <div className="section-title">
@@ -37,44 +38,21 @@ const Home: React.FC = () => {
           </div>
           <div className="services-grid">
             <div className="service-card">
-              <h3>Smart Study Planner</h3>
-              <p>An AI-powered study schedule generator that adapts to your learning style and available time.</p>
+              <h3>Supply Chain Demand Forecasting</h3>
+              <p>Built an AI-powered forecasting system designed to help businesses predict future product demand using historical sales patterns and market trends. The project focused on improving planning efficiency and reducing inventory uncertainty through intelligent forecasting.</p>
             </div>
             <div className="service-card">
-              <h3>Code Sketch Pad</h3>
-              <p>A browser-based code playground with real-time preview, built from scratch with vanilla JS.</p>
+              <h3>SMARTSAT Browser Extension</h3>
+              <p>Developed an AI-assisted browser extension that helps users explore and understand satellite and space-related data more easily through natural language search and intelligent information retrieval.</p>
             </div>
             <div className="service-card">
-              <h3>Data Story Teller</h3>
-              <p>Interactive data visualization dashboard that turns raw CSV files into compelling visual narratives.</p>
+              <h3>Chess AI Platform</h3>
+              <p>Created an interactive chess platform where users can play against an AI agent trained to analyze moves, learn strategies, and make competitive decisions in real time.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="section team-preview">
-        <div className="container">
-          <div className="section-title">
-            <h2>Kind Words</h2>
-            <p>Nice things people have said</p>
-          </div>
-          <div className="team-grid">
-            <div className="team-member note-cream">
-              <h4>"Raghava has an incredible eye for detail and a genuine passion for clean code."</h4>
-              <p className="role handwritten">— A mentor</p>
-            </div>
-            <div className="team-member note-sage">
-              <h4>"Working with Raghava was a breeze. Creative solutions, every time."</h4>
-              <p className="role handwritten">— A teammate</p>
-            </div>
-            <div className="team-member note-blue">
-              <h4>"One of the most curious and driven developers I know."</h4>
-              <p className="role handwritten">— A friend</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="section cta-section">

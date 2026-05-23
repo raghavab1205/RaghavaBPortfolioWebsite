@@ -59,8 +59,8 @@
   transform: rotate(4deg);
   width: 80px;
   height: 25px;
-  background-color: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(0,0,0,0.05);
+  background-color: var(--primary);
+  border: 1px solid var(--border);
   box-shadow: 0 1px 2px rgba(0,0,0,0.05);
   z-index: 10;
 }
@@ -282,6 +282,101 @@
   font-size: 0.95rem;
 }
 
+/* Skills Section */
+.skills-section {
+  background-color: var(--primary-light);
+  border-bottom: 1px dashed var(--pencil-line);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-2xl);
+}
+
+.skill-card {
+  background: var(--primary);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-notebook);
+  padding: var(--spacing-xl);
+  transition: all var(--transition-base);
+  position: relative;
+  box-shadow: var(--paper-shadow);
+  transform: rotate(-0.5deg);
+}
+
+.skill-card:nth-child(even) {
+  transform: rotate(0.5deg);
+}
+
+.skill-card:hover {
+  border-color: var(--secondary);
+  transform: translateY(-4px) rotate(0);
+  box-shadow: var(--paper-shadow-hover);
+}
+
+.skill-card h4 {
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-lg);
+  font-size: 1.3rem;
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+}
+
+.skill-list li {
+  color: var(--text-secondary);
+  padding: var(--spacing-sm) 0;
+  padding-left: var(--spacing-lg);
+  position: relative;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.skill-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+  font-weight: bold;
+}
+
+/* Project Links */
+.project-links {
+  margin-top: var(--spacing-lg);
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: var(--tab-about);
+  color: var(--text-primary);
+  border: 1px dashed var(--accent);
+  border-radius: var(--radius-sm);
+  font-family: 'Caveat', cursive;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-base);
+  box-shadow: var(--paper-shadow);
+  transform: rotate(-0.5deg);
+}
+
+.github-link:hover {
+  transform: translateY(-2px) rotate(0.3deg);
+  box-shadow: var(--paper-shadow-hover);
+  border-color: var(--secondary);
+  text-decoration: none;
+}
+
 /* CTA Section */
 .cta-section {
   background-color: var(--primary-light);
@@ -326,7 +421,7 @@
 .cta-btn:hover {
   transform: translateY(-3px) rotate(0.3deg);
   box-shadow: var(--paper-shadow-hover);
-  background: #dfc8a8;
+  background: var(--primary-light);
 }
 
 /* Responsive */
