@@ -149,6 +149,29 @@
   margin-top: 10px;
 }
 
+/* Field-level error styling */
+.input-error {
+  border-bottom-color: var(--danger) !important;
+  border-bottom-style: solid !important;
+  border-bottom-width: 2px !important;
+  background-color: var(--primary-light) !important;
+}
+
+.input-error {
+  border-color: var(--danger) !important;
+}
+
+.field-error-message {
+  display: block;
+  color: var(--danger);
+  font-family: 'Caveat', cursive;
+  font-size: 1rem;
+  margin-top: var(--spacing-sm);
+  padding-left: var(--spacing-sm);
+  animation: slideInUp 0.3s ease-out;
+  font-weight: 500;
+}
+
 .submit-btn {
   align-self: flex-start;
   margin-top: var(--spacing-xl);
@@ -161,7 +184,7 @@
 
 .submit-btn:hover {
   transform: translateY(-2px) rotate(0deg);
-  background-color: #dfc8a8;
+  background-color: var(--primary-light);
 }
 
 /* Contact Info Wrapper */

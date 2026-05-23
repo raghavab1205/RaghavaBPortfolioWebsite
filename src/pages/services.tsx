@@ -1,6 +1,7 @@
 // UI ONLY CHANGE
 // CONTENT FILL
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './services.css';
 
 const Services: React.FC = () => {
@@ -126,9 +127,9 @@ const Services: React.FC = () => {
           <div className="cta-content">
             <h2>Want to talk about a project or collab?</h2>
             <p className="handwritten">I love hearing about interesting problems to solve</p>
-            <a href="/contact" className="cta-btn">
+            <Link to="/contact" className="cta-btn">
               Go to Contact
-            </a>
+            </Link>
           </div>
         </div>
       </section>

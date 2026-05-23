@@ -11,9 +11,48 @@ const Contact: React.FC = () => {
     honeypot: '',
   });
 
+  const [fieldErrors, setFieldErrors] = useState<{
+    name?: string;
+    email?: string;
+    subject?: string;
+    message?: string;
+  }>({});
+
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Validation rules
+  const validateField = (name: string, value: string): string | null => {
+    switch (name) {
+      case 'name':
+        if (!value.trim()) return 'Name is required';
+        if (value.trim().length < 2) return 'Name must be at least 2 characters';
+        if (value.trim().length > 50) return 'Name must be less than 50 characters';
+        return null;
+
+      case 'email':
+        if (!value.trim()) return 'Email is required';
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(value)) return 'Please enter a valid email address';
+        return null;
+
+      case 'subject':
+        if (!value.trim()) return 'Subject is required';
+        if (value.trim().length < 3) return 'Subject must be at least 3 characters';
+        if (value.trim().length > 100) return 'Subject must be less than 100 characters';
+        return null;
+
+      case 'message':
+        if (!value.trim()) return 'Message is required';
+        if (value.trim().length < 10) return 'Message must be at least 10 characters';
+        if (value.trim().length > 2000) return 'Message must be less than 2000 characters';
+        return null;
+
+      default:
+        return null;
+    }
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -21,13 +60,42 @@ const Contact: React.FC = () => {
       ...prev,
       [name]: value,
     }));
+
+    // Real-time validation
+    const fieldError = validateField(name, value);
+    setFieldErrors((prev) => ({
+      ...prev,
+      [name]: fieldError,
+    }));
+
+    // Clear global error when user starts typing
     if (error) setError(null);
+  };
+
+  const validateForm = (): boolean => {
+    const errors: typeof fieldErrors = {};
+
+    ['name', 'email', 'subject', 'message'].forEach((fieldName) => {
+      const error = validateField(fieldName, formData[fieldName as keyof typeof formData]);
+      if (error) {
+        errors[fieldName as keyof typeof fieldErrors] = error;
+      }
+    });
+
+    setFieldErrors(errors);
+    return Object.keys(errors).length === 0;
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
+
+    // Validate all fields before submitting
+    if (!validateForm()) {
+      setLoading(false);
+      return;
+    }
 
     try {
       const response = await fetch('/api/contact', {
@@ -46,6 +114,7 @@ const Contact: React.FC = () => {
 
       setSubmitted(true);
       setFormData({ name: '', email: '', subject: '', message: '', honeypot: '' });
+      setFieldErrors({});
       
       setTimeout(() => {
         setSubmitted(false);
@@ -99,7 +168,11 @@ const Contact: React.FC = () => {
                     required
                     disabled={loading}
                     placeholder="Your name"
+                    className={fieldErrors.name ? 'input-error' : ''}
                   />
+                  {fieldErrors.name && (
+                    <span className="field-error-message">⚠ {fieldErrors.name}</span>
+                  )}
                 </div>
 
                 <div className="form-group">
@@ -113,7 +186,11 @@ const Contact: React.FC = () => {
                     required
                     disabled={loading}
                     placeholder="your@email.com"
+                    className={fieldErrors.email ? 'input-error' : ''}
                   />
+                  {fieldErrors.email && (
+                    <span className="field-error-message">⚠ {fieldErrors.email}</span>
+                  )}
                 </div>
 
                 <div className="form-group">
@@ -127,7 +204,11 @@ const Contact: React.FC = () => {
                     required
                     disabled={loading}
                     placeholder="What's on your mind?"
+                    className={fieldErrors.subject ? 'input-error' : ''}
                   />
+                  {fieldErrors.subject && (
+                    <span className="field-error-message">⚠ {fieldErrors.subject}</span>
+                  )}
                 </div>
 
                 <div className="form-group">
@@ -141,7 +222,11 @@ const Contact: React.FC = () => {
                     disabled={loading}
                     placeholder="Write your thoughts here..."
                     rows={6}
+                    className={fieldErrors.message ? 'input-error' : ''}
                   />
+                  {fieldErrors.message && (
+                    <span className="field-error-message">⚠ {fieldErrors.message}</span>
+                  )}
                 </div>
 
                 {/* Honeypot field - hidden from users */}
