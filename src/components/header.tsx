@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
+import NotebookID from './NotebookID';
 import './header.css';
 
 const Header: React.FC = () => {
@@ -15,6 +16,7 @@ const Header: React.FC = () => {
   const navLinks = [
     { path: '/', label: 'Home', color: 'tab-home' },
     { path: '/about', label: 'About', color: 'tab-about' },
+    { path: '/experience', label: 'Experience', color: 'tab-experience' },
     { path: '/services', label: 'Projects', color: 'tab-projects' },
     { path: '/contact', label: 'Contact', color: 'tab-contact' },
   ];
@@ -22,6 +24,7 @@ const Header: React.FC = () => {
   return (
     <>
       <ThemeToggle />
+      <NotebookID />
       
       {/* Desktop — Notebook Tab Navigation (left side) */}
       <nav className="notebook-tabs" aria-label="Main navigation">

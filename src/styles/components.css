@@ -20,31 +20,79 @@
   gap: var(--spacing-sm);
   position: relative;
   transform: rotate(-0.5deg);
+  z-index: 1;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: -5%;
+  width: 0%;
+  height: 65%;
+  background-color: var(--highlight-color, var(--tab-home));
+  z-index: -1;
+  transform: rotate(-2.5deg);
+  border-radius: 2px 5px 3px 2px;
+  transition: width 0.3s cubic-bezier(0.2, 0, 0, 1);
+  pointer-events: none;
+}
+
+.btn:hover,
+.btn:active {
+  box-shadow: none !important;
+  border-color: transparent !important;
+  background: transparent !important;
+  color: var(--text-primary) !important;
+}
+
+.btn:hover::before,
+.btn:active::before {
+  width: 110%;
 }
 
 .btn-primary {
+  --highlight-color: var(--tab-home);
   background: var(--tab-home);
   color: var(--text-primary);
   border-color: var(--secondary);
   box-shadow: var(--paper-shadow);
 }
 
-.btn-primary:hover {
-  transform: translateY(-3px) rotate(0.3deg);
-  box-shadow: var(--paper-shadow-hover);
-  background: var(--primary-light);
-  border-bottom: 2px dashed var(--secondary);
-}
-
 .btn-secondary {
+  --highlight-color: var(--tab-about);
   background: transparent;
   border: 2px dashed var(--secondary);
   color: var(--secondary);
 }
 
-.btn-secondary:hover {
-  background: var(--border);
-  transform: translateY(-2px) rotate(0.3deg);
+.btn-experience {
+  --highlight-color: var(--tab-experience);
+  background: var(--tab-experience);
+  color: var(--text-primary);
+  border-color: var(--secondary);
+  box-shadow: var(--paper-shadow);
+}
+
+.btn-projects {
+  --highlight-color: var(--tab-projects);
+  background: transparent;
+  border: 2px dashed var(--secondary);
+  color: var(--secondary);
+}
+
+.btn-about {
+  --highlight-color: var(--tab-about);
+  background: transparent;
+  border: 2px dashed var(--secondary);
+  color: var(--secondary);
+}
+
+.btn-contact, .submit-btn, .cta-btn {
+  --highlight-color: var(--tab-contact);
+  background: var(--primary);
+  border: 2px dashed var(--secondary);
+  color: var(--text-primary);
 }
 
 .btn-accent {

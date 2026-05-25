@@ -17,11 +17,16 @@ const Home: React.FC = () => {
             <p className="hero-subtitle handwritten">
               Final-year AI/ML student building end-to-end ML pipelines and full-stack web apps. From OCR models to MERN stacks, welcome to my notebook.
             </p>
+            <div className="hero-cta-top">
+              <Link to="/experience" className="btn btn-experience">
+                My Experience
+              </Link>
+            </div>
             <div className="hero-cta">
-              <Link to="/services" className="btn btn-primary">
+              <Link to="/services" className="btn btn-projects">
                 See My Projects
               </Link>
-              <Link to="/about" className="btn btn-secondary">
+              <Link to="/about" className="btn btn-about">
                 About Me
               </Link>
             </div>
@@ -60,7 +65,7 @@ const Home: React.FC = () => {
           <div className="cta-content">
             <h2>Want to collaborate?</h2>
             <p className="handwritten">I'm always up for interesting projects and conversations.</p>
-            <Link to="/contact" className="cta-btn">
+            <Link to="/contact" className="btn cta-btn">
               Drop me a note
             </Link>
           </div>

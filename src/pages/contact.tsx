@@ -270,7 +270,7 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="info-card">
-                <h4>Coffee Lover</h4>
+                <h4>Chai Lover</h4>
                 <p>Best ideas come with a good cup of chai ☕</p>
               </div>
 

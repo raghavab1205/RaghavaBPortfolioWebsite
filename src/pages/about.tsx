@@ -1,6 +1,7 @@
 // UI ONLY CHANGE
 // CONTENT FILL
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './about.css';
 
 const About: React.FC = () => {
@@ -125,6 +126,17 @@ const About: React.FC = () => {
               <h4>Building in public</h4>
               <p>Sharing my work and learning openly (<a href="https://github.com/raghavab1205" target="_blank" rel="noreferrer">GitHub</a>)</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Navigation */}
+      <section className="section experience-nav-section">
+        <div className="container">
+          <div className="experience-nav-content">
+            <Link to="/experience" className="btn btn-experience">
+              See My Experience →
+            </Link>
           </div>
         </div>
       </section>

@@ -46,6 +46,9 @@
 .notebook-tab.tab-projects {
   background: var(--tab-projects);
 }
+.notebook-tab.tab-experience {
+  background: var(--tab-experience);
+}
 .notebook-tab.tab-contact {
   background: var(--tab-contact);
 }
@@ -224,6 +227,7 @@
 /* Color backgrounds for mobile links */
 .mobile-link.tab-home { background: var(--tab-home); }
 .mobile-link.tab-about { background: var(--tab-about); }
+.mobile-link.tab-experience { background: var(--tab-experience); }
 .mobile-link.tab-projects { background: var(--tab-projects); }
 .mobile-link.tab-contact { background: var(--tab-contact); }
 

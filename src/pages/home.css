@@ -58,6 +58,13 @@
   line-height: 1.6;
 }
 
+.hero-cta-top {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--spacing-lg);
+  animation: slideInUp 0.8s ease-out 0.2s backwards;
+}
+
 .hero-cta {
   display: flex;
   gap: var(--spacing-lg);

@@ -5,6 +5,7 @@ import Home from './pages/home';
 import Contact from './pages/contact';
 import About from './pages/about';
 import Services from './pages/services';
+import Experience from './pages/experience';
 
 const App: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const App: React.FC = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/experience" element={<Experience />} />
       </Routes>
     </Router>
   );

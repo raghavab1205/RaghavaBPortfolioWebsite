@@ -127,7 +127,7 @@ const Services: React.FC = () => {
           <div className="cta-content">
             <h2>Want to talk about a project or collab?</h2>
             <p className="handwritten">I love hearing about interesting problems to solve</p>
-            <Link to="/contact" className="cta-btn">
+            <Link to="/contact" className="btn cta-btn">
               Go to Contact
             </Link>
           </div>
