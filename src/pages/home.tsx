@@ -12,10 +12,10 @@ const Home: React.FC = () => {
         <div className="container hero-content">
           <div className="hero-text">
             <h1 className="hero-title">
-              Hey, I'm Raghava — I train models, break things, and occasionally ship them.
+              Hey, I'm Raghava, welcome to my notebook.
             </h1>
             <p className="hero-subtitle handwritten">
-              Final-year AI/ML student building end-to-end ML pipelines and full-stack web apps. From OCR models to MERN stacks, welcome to my notebook.
+               I train models, break things, and occasionally explore something new. I'm a Final-year AI/ML student building end-to-end ML pipelines and full-stack web apps. From OCR models to MERN stacks.
             </p>
             <div className="hero-cta-top">
               <Link to="/experience" className="btn btn-experience">
@@ -29,6 +29,30 @@ const Home: React.FC = () => {
               <Link to="/about" className="btn btn-about">
                 About Me
               </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Experience Overview */}
+      <section className="section experience-overview">
+        <div className="container">
+          <div className="section-title">
+            <h2>Places I've Worked</h2>
+            <p>My recent professional experience</p>
+          </div>
+          <div className="services-grid">
+            <div className="service-card">
+              {/* <div style={{ fontSize: '2rem', marginBottom: 'var(--spacing-sm)' }}>🤖</div> */}
+              <h3>ML Intern</h3>
+              <p className="handwritten" style={{ color: 'var(--secondary)', marginBottom: 'var(--spacing-sm)', fontSize: '1.2rem' }}>AceMicromatic MIT <br/> Feb 2026 – May 2026</p>
+              <p>Architected robust OCR and AI pipelines to extract structured data from engineering drawings, evaluated CNN architectures, and formulated VLM confidence scoring frameworks.</p>
+            </div>
+            <div className="service-card">
+              {/* <div style={{ fontSize: '2rem', marginBottom: 'var(--spacing-sm)' }}>💻</div> */}
+              <h3>Software Developer Intern</h3>
+              <p className="handwritten" style={{ color: 'var(--secondary)', marginBottom: 'var(--spacing-sm)', fontSize: '1.2rem' }}>SoftServe Global <br/> Feb 2025 – Apr 2025</p>
+              <p>Developed features for internal enterprise platforms using the MERN stack, engineered reusable React components, and optimized Node.js/Express APIs integrated with MongoDB.</p>
             </div>
           </div>
         </div>

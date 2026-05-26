@@ -196,6 +196,32 @@
   border-bottom-color: var(--accent);
 }
 
+/* Social Links */
+.id-social-links {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+  font-size: 0.85rem;
+  align-items: center;
+}
+
+.id-social-links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.id-social-links a:hover {
+  text-decoration: underline;
+  color: var(--secondary);
+}
+
+.id-social-links span {
+  color: var(--secondary);
+  opacity: 0.5;
+}
+
 /* About Button */
 .id-about-btn {
   display: block;

@@ -59,7 +59,7 @@ const Header: React.FC = () => {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="mobile-menu-header">
-              <span className="mobile-title">Raghava's Notebook</span>
+              <span className="mobile-title">Notebook Tabs</span>
               <button
                 className="mobile-close"
                 onClick={closeSidebar}

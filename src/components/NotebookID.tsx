@@ -73,6 +73,11 @@ const NotebookID: React.FC = () => {
             <p className="id-email">
               <a href="mailto:raghavab1205@gmail.com">raghavab1205@gmail.com</a>
             </p>
+            <div className="id-social-links">
+              <a href="https://www.linkedin.com/in/raghava-b-017233251" target="_blank" rel="noreferrer">LinkedIn</a>
+              <span>·</span>
+              <a href="https://github.com/raghavab1205" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
           </div>
 
           {/* About Button */}

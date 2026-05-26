@@ -73,9 +73,15 @@
   animation: slideInUp 0.8s ease-out 0.2s backwards;
 }
 
+/* Experience Overview Section */
+.experience-overview {
+  background-color: var(--primary-light);
+  border-top: 1px dashed var(--pencil-line);
+}
+
 /* Services Overview Section */
 .services-overview {
-  background-color: var(--primary-light);
+  background-color: var(--primary);
   border-top: 1px dashed var(--pencil-line);
 }
 
